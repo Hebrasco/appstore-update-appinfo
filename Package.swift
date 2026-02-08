@@ -1,0 +1,23 @@
+// swift-tools-version: 6.2
+// The swift-tools-version declares the minimum version of Swift required to build this package.
+
+import PackageDescription
+
+let package = Package(
+    name: "appstore-update-appinfo",
+    platforms: [
+        .macOS(.v13),
+    ],
+    dependencies: [
+        .package(url: "https://github.com/apple/swift-argument-parser", from: "1.3.0"),
+        .package(url: "https://github.com/AvdLee/appstoreconnect-swift-sdk.git", .upToNextMajor(from: "4.0.0"))
+    ],
+    targets: [
+        .executableTarget(
+            name: "appstore-update-appinfo", dependencies: [
+                .product(name: "ArgumentParser", package: "swift-argument-parser"),
+                .product(name: "AppStoreConnect-Swift-SDK", package: "appstoreconnect-swift-sdk"),
+            ]
+        ),
+    ]
+)
