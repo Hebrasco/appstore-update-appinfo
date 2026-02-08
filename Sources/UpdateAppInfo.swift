@@ -7,7 +7,7 @@
 
 import Foundation
 import ArgumentParser
-@preconcurrency  import AppStoreConnect_Swift_SDK
+@preconcurrency import AppStoreConnect_Swift_SDK
 
 let provider = APIProvider(configuration: APPSTORE_CONFIGURATION)
 
