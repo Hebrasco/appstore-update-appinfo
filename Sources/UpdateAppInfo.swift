@@ -94,7 +94,7 @@ struct UpdateAppInfo: AsyncParsableCommand {
     }
     
     func validateAttribute(_ attribute: String?, maxCount: Int) -> Bool {
-        attribute?.count ?? 0 < maxCount
+        attribute?.count ?? 0 <= maxCount
     }
 
     func requestApp(bundleId: String) async -> App {
